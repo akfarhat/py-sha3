@@ -185,3 +185,22 @@ class Keccak:
         b.append('0b1111')
         bitstr = self.keccak(512, b, d) 
         return BitArray(bin=bitstr).bytes
+
+k = Keccak()
+h = k.SHA3_224('')
+b = BitArray(bytes=h)
+print len(b)
+print b.hex
+h = k.SHA3_256('')
+b = BitArray(bytes=h)
+print len(b)
+print b.hex
+h = k.SHA3_384('')
+b = BitArray(bytes=h)
+print len(b)
+print b.hex
+h = k.SHA3_512('')
+b = BitArray(bytes=h)
+print len(b)
+print b.hex
+
