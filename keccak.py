@@ -1,4 +1,5 @@
-''' SHA-3 implementation based on the NIST standard FIPS 202
+'''
+SHA-3 implementation based on the NIST standard FIPS 202
 http://csrc.nist.gov/publications/drafts/fips-202/fips_202_draft.pdf
 '''
 
@@ -17,9 +18,9 @@ class Keccak:
         self.num_rounds = num_rounds
 
     def string_to_array(self, s):
-        A = [[[s[self.w * (5 * y + x) + z] for z in range(self.w)] 
-                                                for y in range(5)]
-                                                for x in range(5)]
+        A = [[[s[self.w * (5*y + x) + z] for z in range(self.w)] 
+                                         for y in range(5)]
+                                         for x in range(5)]
         
         return A
 
@@ -189,18 +190,18 @@ class Keccak:
 k = Keccak()
 h = k.SHA3_224('')
 b = BitArray(bytes=h)
-print len(b)
+print 'SHA3-{}('')'.format(len(b))
 print b.hex
 h = k.SHA3_256('')
 b = BitArray(bytes=h)
-print len(b)
+print 'SHA3-{}('')'.format(len(b))
 print b.hex
 h = k.SHA3_384('')
 b = BitArray(bytes=h)
-print len(b)
+print 'SHA3-{}('')'.format(len(b))
 print b.hex
 h = k.SHA3_512('')
 b = BitArray(bytes=h)
-print len(b)
+print 'SHA3-{}('')'.format(len(b))
 print b.hex
 
